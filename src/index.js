@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import './styles/index.css';
-// import BaseLayout from './components/BaseLayout';
+import BaseLayout from './components/BaseLayout';
 import registerServiceWorker from './registerServiceWorker';
 
 import geocoder from 'google-geocoder';
@@ -22,24 +22,36 @@ darksky.apiKey = DS_API;
 class App extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      dailyWeather: {}
+    }
     this.handleWeather('Charleston');
   }
-  handleWeather = (search_term) => {
-    geo.find(search_term, function (err, res) {
+  handleWeather(search_term) {
+    geo.find(search_term, (err, res) => {
       let position = {
         latitude: res[0].location.lat,
         longitude: res[0].location.lng
       }
       darksky.loadCurrent(position)
-      .then(result => console.log(result))
+      .then(result => {
+        let dailyWeather = {
+          date: result.dateTime._d,
+          icon: result.icon,
+          humidity: result.humidity,
+          summary: result.summary,
+          temperature: result.temperature
+        }
+        this.setState({dailyWeather: dailyWeather});
+        console.log(dailyWeather);
+      })
       .catch();
     })
   }
   render() {
     return(
-      <div>
-        Test
-      </div>
+      <BaseLayout dailyWeather={this.state.dailyWeather} />
     )
   }
 }
