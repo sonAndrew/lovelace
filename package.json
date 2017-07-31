@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "google-geocoder": "^0.2.1",
     "node-geocoder": "^3.19.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

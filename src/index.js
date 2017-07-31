@@ -4,32 +4,23 @@ import './styles/index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 // Import Geocode Module
-import GG_Geocode from 'node-geocoder';
+import geocoder from 'google-geocoder';
 const GG_API = 'AIzaSyAkU61SJoxhqnZyY1lNi6GcQXzlGS-GaRU';
 
-//  Geocode Settings
-const options = {
-  provider: 'google',
-  httpAdapter: 'https',
-  apiKey: GG_API, 
-  formatter: null
-}; 
-const geocoder = GG_Geocode(options);
+const geo = geocoder ({
+  key: GG_API
+})
 
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.handleLocation('Charleston');
+    this.handleWeather('Charleston');
   }
-  handleLocation = (search_term) => {
-    geocoder.geocode(search_term)
-    .then(function(res) {
-      console.log(res);
-    })
-    .catch(function(err) {
-      console.log(err);
-    });
+  handleWeather = (search_term) => {
+    geo.find(search_term, function (err, res) {
+    let location = res[0].location;
+  })
   }
   render() {
     return(
