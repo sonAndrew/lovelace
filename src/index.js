@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+
 import './styles/index.css';
+// import BaseLayout from './components/BaseLayout';
 import registerServiceWorker from './registerServiceWorker';
 
 import geocoder from 'google-geocoder';
@@ -29,7 +31,8 @@ class App extends Component {
         longitude: res[0].location.lng
       }
       darksky.loadCurrent(position)
-      .then(result => console.log(result));
+      .then(result => console.log(result))
+      .catch();
     })
   }
   render() {
@@ -42,5 +45,8 @@ class App extends Component {
 }
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <App /> 
+  , 
+  document.getElementById('root'));
 registerServiceWorker();
