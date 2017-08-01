@@ -11,7 +11,7 @@ const BaseLayout = (props) => {
   }
   return (
     <div className="App">
-      <h1>
+      <h1 className="white-text">
         Today's Place
       </h1>
       <SearchBar />

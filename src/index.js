@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+// import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import './styles/index.css';
-import BaseLayout from './components/BaseLayout';
+// import BaseLayout from './components/BaseLayout';
 import registerServiceWorker from './registerServiceWorker';
 
 import geocoder from 'google-geocoder';
@@ -28,6 +30,8 @@ class App extends Component {
     }
     this.handleWeather('Charleston');
   }
+
+
   handleWeather(search_term) {
     geo.find(search_term, (err, res) => {
       let position = {
@@ -44,13 +48,21 @@ class App extends Component {
           temperature: result.temperature
         }
         this.setState({dailyWeather: dailyWeather});
+        console.log(this.state.dailyWeather);
       })
       .catch();
     })
+     
   }
+ 
   render() {
     return(
-      <BaseLayout dailyWeather={this.state.dailyWeather} />
+      <div>
+        <h1 className="white-text center">
+          Today's Place
+        </h1>
+        <p></p>
+      </div>
     )
   }
 }
