@@ -10,13 +10,14 @@ export default class SearchBar extends Component {
   }
   render(){
     return (
-      <form onSubmit={this.handleWeather}>
-        <label>
-          Location:
-          <input name="name" type="text"/>
-        </label>
-        <input type="submit" value="Search"/>
-      </form>
+      <div className="container">
+        <form className="center" onSubmit={this.handleWeather}>
+          <input className="input-field" name="name" type="text" placeholder="Location" />
+        
+          <button className="cyan white-text" type="submit"><i className="material-icons left white-text">cloud</i>Search</button>
+        </form>
+      </div>
+      
     );
   }
 }
