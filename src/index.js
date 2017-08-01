@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import './styles/index.css';
-import BaseLayout from './components/BaseLayout';
+// import BaseLayout from './components/BaseLayout';
 import registerServiceWorker from './registerServiceWorker';
 
 import geocoder from 'google-geocoder';
@@ -28,6 +28,8 @@ class App extends Component {
     }
     this.handleWeather('Charleston');
   }
+
+
   handleWeather(search_term) {
     geo.find(search_term, (err, res) => {
       let position = {
@@ -43,15 +45,22 @@ class App extends Component {
           summary: result.summary,
           temperature: result.temperature
         }
-        this.setState({dailyWeather: dailyWeather});
+        this.setState({dailyWeather});
         console.log(dailyWeather);
       })
       .catch();
     })
+     console.log(this.state.dailyWeather);
   }
+ 
   render() {
     return(
-      <BaseLayout dailyWeather={this.state.dailyWeather} />
+      <div>
+        <h1>
+          Today's Place
+        </h1>
+        <p></p>
+      </div>
     )
   }
 }
