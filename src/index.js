@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 // import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './styles/index.css';
-// import BaseLayout from './components/BaseLayout';
+import BaseLayout from './components/BaseLayout';
 import SearchBar from './components/SearchBar';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -33,7 +33,6 @@ class App extends Component {
     this.handleWeather('Charleston');
   }
 
-
   handleWeather(search_term) {
     geo.find(search_term, (err, res) => {
       let position = {
@@ -59,11 +58,12 @@ class App extends Component {
   render() {
     return(
       <div>
-        <h1 className="white-text center">
-          Today's Place
-        </h1>
-        <SearchBar />
-        <p></p>
+        <BaseLayout dailyWeather={this.state.dailyWeather}>
+          <h1 className="white-text center">
+            Today's Place
+          </h1>
+          <SearchBar handleWeather={this.handleWeather}/>
+        </BaseLayout>
       </div>
     )
   }
