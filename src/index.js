@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 
 import './styles/index.css';
 // import BaseLayout from './components/BaseLayout';
+import SearchBar from './components/SearchBar';
 import registerServiceWorker from './registerServiceWorker';
 
 import geocoder from 'google-geocoder';
@@ -61,6 +62,7 @@ class App extends Component {
         <h1 className="white-text center">
           Today's Place
         </h1>
+        <SearchBar />
         <p></p>
       </div>
     )
