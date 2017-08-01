@@ -44,7 +44,6 @@ class App extends Component {
           temperature: result.temperature
         }
         this.setState({dailyWeather: dailyWeather});
-        console.log(dailyWeather);
       })
       .catch();
     })
