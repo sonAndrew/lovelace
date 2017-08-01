@@ -14,6 +14,12 @@ export default class Results extends Component {
                 <li className="list-group-item">Summary: {this.props.dailyWeather.summary}</li>
                 <li className="list-group-item">Temperature: {this.props.dailyWeather.temperature}</li>
                 <li className="list-group-item">Humidity: {this.props.dailyWeather.humidity}</li>
+                <li className="list-group-item">Precipitation: {this.props.dailyWeather.precipitation}</li>
+                <li className="list-group-item">Wind Speed: {this.props.dailyWeather.wind}</li>
+                <li className="list-group-item">High: {this.props.dailyWeather.high}</li>
+                <li className="list-group-item">Low: {this.props.dailyWeather.low}</li>
+                <li className="list-group-item">Sunrise: {this.props.dailyWeather.sunrise}</li>
+                <li className="list-group-item">Sunset: {this.props.dailyWeather.sunset}</li>
             </ul>
           </div>
         </div>
