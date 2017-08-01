@@ -8,13 +8,12 @@ const BaseLayout = (props) => {
   else {
    var date = props.dailyWeather.date;
   }
-  console.log(date);
   return (
     <div className="App">
       <h1>
         Today's Place
       </h1>
-      <p></p>
+      <p>{props.dailyWeather.humidity}</p>
     </div>
   );
 }
