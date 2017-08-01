@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import moment from 'moment';
 
 import './styles/index.css';
 import BaseLayout from './components/BaseLayout';
@@ -34,14 +35,16 @@ class App extends Component {
       let position = {
         latitude: res[0].location.lat,
         longitude: res[0].location.lng,
-        city: res[0].city.long_name
+        city: res[0].formatted_address
       }
+      console.log(res);
       darksky.loadForecast(position)
       .then(result => {
         let today = result.daily.data[0];
+        let date = moment().format('dddd');
         let dailyWeather = {
+          date: date,
           city: position.city,
-          date: today.dateTime._d,
           icon: today.icon,
           humidity: today.humidity,
           precipitation: today.precipProbability,
@@ -49,8 +52,8 @@ class App extends Component {
           wind: today.windSpeed,
           high: today.temperatureMax,
           low: today.temperatureMin,
-          sunrise: today.sunriseTime,
-          sunset: today.sunsetTime
+          sunrise: moment(today.sunriseTime * 1000).format('h:hh'),
+          sunset: moment(today.sunsetTime * 1000).format('h:hh')
         }
         this.setState({dailyWeather: dailyWeather});
       })
