@@ -36,21 +36,23 @@ class App extends Component {
         longitude: res[0].location.lng,
         city: res[0].city.long_name
       }
-      darksky.loadCurrent(position)
+      darksky.loadForecast(position)
       .then(result => {
+        let today = result.daily.data[0];
+        console.log(today);
         let dailyWeather = {
           city: position.city,
-          date: result.dateTime._d,
-          icon: result.icon,
-          humidity: result.humidity,
-          precipitation: result.precipProbability,
-          summary: result.summary,
-          temperature: result.temperature,
-          wind: result.windSpeed,
-          high: result.temperatureMax,
-          low: result.temperatureLow,
-          sunrise: result.sunriseTime,
-          sunset: result.sunsetTime
+          date: today.dateTime._d,
+          icon: today.icon,
+          humidity: today.humidity,
+          precipitation: today.precipProbability,
+          summary: today.summary,
+          temperature: today.temperature,
+          wind: today.windSpeed,
+          high: today.temperatureMax,
+          low: today.temperatureMin,
+          sunrise: today.sunriseTime,
+          sunset: today.sunsetTime
         }
         this.setState({dailyWeather: dailyWeather});
       })
