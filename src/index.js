@@ -38,7 +38,6 @@ class App extends Component {
       }
       darksky.loadForecast(position)
       .then(result => {
-        console.log(result);
         let today = result.daily.data[0];
         let dailyWeather = {
           city: position.city,
