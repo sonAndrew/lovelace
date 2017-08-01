@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/App.css';
+import SearchBar from './SearchBar';
 
 const BaseLayout = (props) => {
   if (!props.dailyWeather.date) {
@@ -13,6 +14,7 @@ const BaseLayout = (props) => {
       <h1>
         Today's Place
       </h1>
+      <SearchBar />
       <p>{props.dailyWeather.humidity}</p>
     </div>
   );
