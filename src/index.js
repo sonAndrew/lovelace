@@ -24,6 +24,7 @@ class App extends Component {
     super(props);
 
     this.state = {
+      term: "",
       dailyWeather: {}
     }
     this.handleWeather('Charleston');
@@ -50,7 +51,8 @@ class App extends Component {
   }
   render() {
     return(
-      <BaseLayout dailyWeather={this.state.dailyWeather} />
+      <BaseLayout dailyWeather={this.state.dailyWeather}>
+      </BaseLayout>
     )
   }
 }
