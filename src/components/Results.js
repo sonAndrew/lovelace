@@ -10,6 +10,7 @@ export default class Results extends Component {
             <div className="card-block">
             <ul className="list-group list-group-flush">
                 <li className="list-group-item"><canvas id="icon" width="20" height="20"></canvas></li>
+                <li className="list-group-item">Date: {this.props.dailyWeather.date}</li>
                 <li className="list-group-item">City: {this.props.dailyWeather.city}</li>
                 <li className="list-group-item">Summary: {this.props.dailyWeather.summary}</li>
                 <li className="list-group-item">Humidity: {this.props.dailyWeather.humidity} %</li>
@@ -17,8 +18,8 @@ export default class Results extends Component {
                 <li className="list-group-item">Wind Speed: {this.props.dailyWeather.wind} mph</li>
                 <li className="list-group-item">High: {this.props.dailyWeather.high} F</li>
                 <li className="list-group-item">Low: {this.props.dailyWeather.low} F</li>
-                <li className="list-group-item">Sunrise: {this.props.dailyWeather.sunrise}</li>
-                <li className="list-group-item">Sunset: {this.props.dailyWeather.sunset}</li>
+                <li className="list-group-item">Sunrise: {this.props.dailyWeather.sunrise} AM</li>
+                <li className="list-group-item">Sunset: {this.props.dailyWeather.sunset} PM</li>
             </ul>
           </div>
         </div>
