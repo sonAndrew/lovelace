@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+// import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import './styles/index.css';
 // import BaseLayout from './components/BaseLayout';
 import registerServiceWorker from './registerServiceWorker';
@@ -45,18 +47,18 @@ class App extends Component {
           summary: result.summary,
           temperature: result.temperature
         }
-        this.setState({dailyWeather});
-        console.log(dailyWeather);
+        this.setState({dailyWeather: dailyWeather});
+        console.log(this.state.dailyWeather);
       })
       .catch();
     })
-     console.log(this.state.dailyWeather);
+     
   }
  
   render() {
     return(
       <div>
-        <h1>
+        <h1 className="white-text center">
           Today's Place
         </h1>
         <p></p>
