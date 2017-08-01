@@ -6,20 +6,22 @@ export default class Results extends Component {
   }
   render(){
     return (
-        <div className="card">
-            <div className="card-block">
-            <ul className="list-group list-group-flush">
-                <li className="list-group-item"><canvas id="icon" width="20" height="20"></canvas></li>
-                <li className="list-group-item">Date: {this.props.dailyWeather.date}</li>
-                <li className="list-group-item">City: {this.props.dailyWeather.city}</li>
-                <li className="list-group-item">Summary: {this.props.dailyWeather.summary}</li>
-                <li className="list-group-item">Humidity: {this.props.dailyWeather.humidity} %</li>
-                <li className="list-group-item">Precipitation: {this.props.dailyWeather.precipitation} in</li>
-                <li className="list-group-item">Wind Speed: {this.props.dailyWeather.wind} mph</li>
-                <li className="list-group-item">High: {this.props.dailyWeather.high} F</li>
-                <li className="list-group-item">Low: {this.props.dailyWeather.low} F</li>
-                <li className="list-group-item">Sunrise: {this.props.dailyWeather.sunrise} AM</li>
-                <li className="list-group-item">Sunset: {this.props.dailyWeather.sunset} PM</li>
+        <div className="container">
+            <div className="card-panel cyan">
+            <h1 className="yellow-text lighten-5">City: {this.props.dailyWeather.city}</h1>
+            <div className="divider"></div>  
+            <ul className="tSize">
+                
+                <li className=""><canvas id="icon" width="20" height="20"></canvas></li>
+                <li className="">Date: {this.props.dailyWeather.date}</li>
+                <li className="">Summary: {this.props.dailyWeather.summary}</li>
+                <li className="">Humidity: {this.props.dailyWeather.humidity} %</li>
+                <li className="">Precipitation: {this.props.dailyWeather.precipitation} in</li>
+                <li className="">Wind Speed: {this.props.dailyWeather.wind} mph</li>
+                <li className="">High: {this.props.dailyWeather.high} F</li>
+                <li className="">Low: {this.props.dailyWeather.low} F</li>
+                <li className="">Sunrise: {this.props.dailyWeather.sunrise} AM</li>
+                <li className="">Sunset: {this.props.dailyWeather.sunset} PM</li>
             </ul>
           </div>
         </div>

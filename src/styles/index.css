@@ -4,3 +4,16 @@ body {
   font-family: sans-serif;
   background-image: url("http://www.macosxtips.co.uk/geeklets/modules/upload/attachments/background.jpg");
 }
+input, input::placeholder {
+  color: green;
+  font-size: 30px !important;
+  text-align: center;
+}
+
+ul, .tSize {
+  font-size: 30px;
+  color: yellow;
+}
+.tSize {
+  transition-delay: 5s;
+}

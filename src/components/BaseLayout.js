@@ -11,9 +11,9 @@ const BaseLayout = (props) => {
     var date = props.dailyWeather.date;
   }
   return (
-    <div className="App">
-      <h1 className="white-text">
-        Today's Place
+    <div className="App center">
+      <h1 className="yellow-text">
+        Weather Forcaster
       </h1>
       <SearchBar handleWeather={props.handleWeather}/>
       <Results dailyWeather={props.dailyWeather}/>
