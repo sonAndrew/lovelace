@@ -19,7 +19,6 @@ const geo = geocoder ({
 const DS_API = 'e24f723d76c1094ccbca15e435ca6f72';
 darksky.apiKey = DS_API;
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -34,11 +33,13 @@ class App extends Component {
     geo.find(search_term, (err, res) => {
       let position = {
         latitude: res[0].location.lat,
-        longitude: res[0].location.lng
+        longitude: res[0].location.lng,
+        city: res[0].city.long_name
       }
       darksky.loadCurrent(position)
       .then(result => {
         let dailyWeather = {
+          city: position.city,
           date: result.dateTime._d,
           icon: result.icon,
           humidity: result.humidity,
@@ -46,23 +47,20 @@ class App extends Component {
           temperature: result.temperature
         }
         this.setState({dailyWeather: dailyWeather});
-        console.log(this.state);
       })
       .catch();
     })
   }
- 
   render() {
     return(
       <div>
-        <BaseLayout dailyWeather={this.state.dailyWeather} handleWeather={this.handleWeather}>
+        <BaseLayout dailyWeather={this.state.dailyWeather} handleWeather={this.handleWeather.bind(this)}>
           {this.props.children}
         </BaseLayout>
       </div>
     )
   }
 }
-
 
 ReactDOM.render(
   <App /> 

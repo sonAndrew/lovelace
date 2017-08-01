@@ -10,7 +10,10 @@ export default class SearchBar extends Component {
   }
 
   onInputChange(term) {
-    this.setState({term});
+    this.setState({term: term});
+  }
+
+  onSubmitChange(term) {
     this.props.handleWeather(term);
   }
 
