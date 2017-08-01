@@ -16,7 +16,7 @@ const geo = geocoder ({
 })
 
 // Dark Sky
-const DS_API = 'e24f723d76c1094ccbca15e435ca6f72';
+const DS_API = '94265616e8227c71408c5e419833008e';
 darksky.apiKey = DS_API;
 
 class App extends Component {
@@ -38,8 +38,8 @@ class App extends Component {
       }
       darksky.loadForecast(position)
       .then(result => {
+        console.log(result);
         let today = result.daily.data[0];
-        console.log(today);
         let dailyWeather = {
           city: position.city,
           date: today.dateTime._d,
@@ -47,7 +47,6 @@ class App extends Component {
           humidity: today.humidity,
           precipitation: today.precipProbability,
           summary: today.summary,
-          temperature: today.temperature,
           wind: today.windSpeed,
           high: today.temperatureMax,
           low: today.temperatureMin,

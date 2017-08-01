@@ -10,11 +10,8 @@ export default class SearchBar extends Component {
   }
 
   onInputChange(term) {
-    this.setState({term: term});
-  }
-
-  onSubmitChange(term) {
-    this.props.handleWeather(term);
+    this.setState({term});
+    console.log(this.state.term);
   }
 
   render(){

@@ -12,7 +12,6 @@ export default class Results extends Component {
                 <li className="list-group-item"><canvas id="icon" width="20" height="20"></canvas></li>
                 <li className="list-group-item">City: {this.props.dailyWeather.city}</li>
                 <li className="list-group-item">Summary: {this.props.dailyWeather.summary}</li>
-                <li className="list-group-item">Temperature: {this.props.dailyWeather.temperature}</li>
                 <li className="list-group-item">Humidity: {this.props.dailyWeather.humidity}</li>
                 <li className="list-group-item">Precipitation: {this.props.dailyWeather.precipitation}</li>
                 <li className="list-group-item">Wind Speed: {this.props.dailyWeather.wind}</li>
