@@ -42,8 +42,14 @@ class App extends Component {
           date: result.dateTime._d,
           icon: result.icon,
           humidity: result.humidity,
+          precipitation: result.precipProbability,
           summary: result.summary,
-          temperature: result.temperature
+          temperature: result.temperature,
+          wind: result.windSpeed,
+          high: result.temperatureMax,
+          low: result.temperatureLow,
+          sunrise: result.sunriseTime,
+          sunset: result.sunsetTime
         }
         this.setState({dailyWeather: dailyWeather});
         console.log(this.state);
