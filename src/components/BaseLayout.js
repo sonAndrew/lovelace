@@ -15,7 +15,6 @@ const BaseLayout = (props) => {
         Today's Place
       </h1>
       <SearchBar />
-      <p>{props.dailyWeather.humidity}</p>
       <footer>
       <a href='https://darksky.net/poweredby/'>Powered by Dark Sky</a>
       </footer>
