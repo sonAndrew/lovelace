@@ -52,8 +52,8 @@ class App extends Component {
           wind: today.windSpeed,
           high: today.temperatureMax,
           low: today.temperatureMin,
-          sunrise: moment(today.sunriseTime * 1000).format('h:hh'),
-          sunset: moment(today.sunsetTime * 1000).format('h:hh')
+          sunrise: moment(today.sunriseTime * 1000).format('h:mm'),
+          sunset: moment(today.sunsetTime * 1000).format('h:mm')
         }
         this.setState({dailyWeather: dailyWeather});
       })
