@@ -16,6 +16,9 @@ const BaseLayout = (props) => {
       </h1>
       <SearchBar />
       <p>{props.dailyWeather.humidity}</p>
+      <footer>
+      <a href='https://darksky.net/poweredby/'>Powered by Dark Sky</a>
+      </footer>
     </div>
   );
 }
