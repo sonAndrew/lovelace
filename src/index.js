@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 
 import './styles/index.css';
 // import BaseLayout from './components/BaseLayout';
+import SearchBar from './components/SearchBar';
 import registerServiceWorker from './registerServiceWorker';
 
 import geocoder from 'google-geocoder';
@@ -57,8 +58,13 @@ class App extends Component {
  
   render() {
     return(
-      <BaseLayout dailyWeather={this.state.dailyWeather}>
-      </BaseLayout>
+      <div>
+        <h1 className="white-text center">
+          Today's Place
+        </h1>
+        <SearchBar />
+        <p></p>
+      </div>
     )
   }
 }
