@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-// import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
 import './styles/index.css';
 import BaseLayout from './components/BaseLayout';
 import SearchBar from './components/SearchBar';
@@ -27,7 +25,6 @@ class App extends Component {
     super(props);
 
     this.state = {
-      term: "",
       dailyWeather: {}
     }
     this.handleWeather('Charleston');
@@ -49,7 +46,7 @@ class App extends Component {
           temperature: result.temperature
         }
         this.setState({dailyWeather: dailyWeather});
-        console.log(this.state.dailyWeather);
+        console.log(this.state);
       })
       .catch();
     })
@@ -58,11 +55,8 @@ class App extends Component {
   render() {
     return(
       <div>
-        <BaseLayout dailyWeather={this.state.dailyWeather}>
-          <h1 className="white-text center">
-            Today's Place
-          </h1>
-          <SearchBar handleWeather={this.handleWeather}/>
+        <BaseLayout dailyWeather={this.state.dailyWeather} handleWeather={this.handleWeather}>
+          {this.props.children}
         </BaseLayout>
       </div>
     )
