@@ -13,7 +13,7 @@ export default class WeeklyResults extends Component {
       <div className="card-panel cyan" key={weather.dateTime._d}>
         <li>{moment(weather.dateTime._d).format('dddd')}</li>
         <li>Summary: {weather.summary}</li>
-        <li>Humidity: {weather.humidity * 100}%</li>
+        <li>Humidity: {Math.round(weather.humidity * 100)}%</li>
         <li>Precipitation: {weather.precipitation} in</li>
         <li>Wind Speed: {weather.windSpeed} mph</li>
         <li>High: {weather.apparentTemperatureMax} F</li>
