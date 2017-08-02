@@ -47,7 +47,7 @@ class App extends Component {
           date: date,
           city: position.city,
           icon: today.icon,
-          humidity: (today.humidity * 100),
+          humidity: Math.round((today.humidity * 100)),
           precipitation: today.precipProbability,
           summary: today.summary,
           wind: today.windSpeed,
