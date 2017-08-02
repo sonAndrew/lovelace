@@ -18,7 +18,7 @@ export default class WeeklyResults extends Component {
         <li>High: {weather.apparentTemperatureMax} F</li>
         <li>Low: {weather.apparentTemperatureMin} F</li>
         <li>Sunrise: {moment(weather.sunriseTime * 1000).format('h:mm')} AM</li>
-        <li>Sunrise: {moment(weather.sunriseTime * 1000).format('h:mm')} PM</li>
+        <li>Sunset: {moment(weather.sunsetTime * 1000).format('h:mm')} PM</li>
       </div>
       );
     });
