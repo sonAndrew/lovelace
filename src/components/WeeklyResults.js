@@ -6,6 +6,7 @@ export default class WeeklyResults extends Component {
     super(props);
   }
   render(){
+    this.props.weeklyWeather.shift();
     const weatherItems = this.props.weeklyWeather.map((weather) => {
       return (
       <div className="card" key={weather.dateTime._d}>
