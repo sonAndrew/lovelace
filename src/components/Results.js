@@ -10,10 +10,8 @@ export default class Results extends Component {
             <div className="card-panel cyan">
             <h1 className="yellow-text lighten-5">City: {this.props.dailyWeather.city}</h1>
             <div className="divider"></div>  
-            <ul className="tSize">
-                
-                <li className=""><canvas id="icon" width="20" height="20"></canvas></li>
-                <li className="">Date: {this.props.dailyWeather.date}</li>
+            <ul className="tSize"> 
+                <li className="">Today</li>
                 <li className="">Summary: {this.props.dailyWeather.summary}</li>
                 <li className="">Humidity: {this.props.dailyWeather.humidity} %</li>
                 <li className="">Precipitation: {this.props.dailyWeather.precipitation} in</li>
