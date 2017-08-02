@@ -25,7 +25,7 @@ export default class WeeklyResults extends Component {
     });
     return (
       <div className="container">
-        <ul className="flex center tSize">
+        <ul className="flex tSize">
           {weatherItems}
         </ul>
       </div>
