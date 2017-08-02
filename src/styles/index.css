@@ -17,3 +17,12 @@ ul, .tSize {
 .tSize {
   transition-delay: 5s;
 }
+.flex {
+  font-size: 16px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between; 
+}
+.flex .card-panel {
+  flex-basis: 30%;
+}

@@ -7,9 +7,10 @@ export default class WeeklyResults extends Component {
   }
   render(){
     this.props.weeklyWeather.shift();
+    this.props.weeklyWeather.pop(-1);
     const weatherItems = this.props.weeklyWeather.map((weather) => {
       return (
-      <div className="card" key={weather.dateTime._d}>
+      <div className="card-panel cyan" key={weather.dateTime._d}>
         <li>{moment(weather.dateTime._d).format('dddd')}</li>
         <li>Summary: {weather.summary}</li>
         <li>Humidity: {weather.humidity * 100}%</li>
@@ -24,7 +25,7 @@ export default class WeeklyResults extends Component {
     });
     return (
       <div className="container">
-        <ul className="tSize">
+        <ul className="flex tSize row">
           {weatherItems}
         </ul>
       </div>
