@@ -25,7 +25,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      dailyWeather: {}
+      dailyWeather: {},
+      weeklyWeather: []
     }
     this.handleWeather('Charleston');
   }
@@ -37,9 +38,9 @@ class App extends Component {
         longitude: res[0].location.lng,
         city: res[0].formatted_address
       }
-      console.log(res);
       darksky.loadForecast(position)
       .then(result => {
+        let weeklyWeather = result.daily.data;
         let today = result.daily.data[0];
         let date = moment().format('dddd');
         let dailyWeather = {
@@ -55,7 +56,8 @@ class App extends Component {
           sunrise: moment(today.sunriseTime * 1000).format('h:mm'),
           sunset: moment(today.sunsetTime * 1000).format('h:mm')
         }
-        this.setState({dailyWeather: dailyWeather});
+        this.setState({dailyWeather: dailyWeather, weeklyWeather: weeklyWeather});
+        console.log(this.state.weeklyWeather);
       })
       .catch();
     })
@@ -63,7 +65,7 @@ class App extends Component {
   render() {
     return(
       <div>
-        <BaseLayout dailyWeather={this.state.dailyWeather} handleWeather={this.handleWeather.bind(this)}>
+        <BaseLayout weeklyWeather={this.state.weeklyWeather} dailyWeather={this.state.dailyWeather} handleWeather={this.handleWeather.bind(this)}>
           {this.props.children}
         </BaseLayout>
       </div>
