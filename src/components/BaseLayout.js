@@ -13,7 +13,7 @@ const BaseLayout = (props) => {
   return (
     <div className="App center">
       <h1 className="yellow-text">
-        Weather Forcaster
+        Weather Forecaster
       </h1>
       <SearchBar handleWeather={props.handleWeather}/>
       <Results dailyWeather={props.dailyWeather}/>
