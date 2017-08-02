@@ -8,7 +8,7 @@ export default class Results extends Component {
     return (
         <div className="container">
             <div className="card-panel cyan">
-            <h1 className="yellow-text lighten-5">City: {this.props.dailyWeather.city}</h1>
+            <h1 className="yellow-text lighten-5">{this.props.dailyWeather.city}</h1>
             <div className="divider"></div>  
             <ul className="tSize"> 
                 <li className="">Today</li>
