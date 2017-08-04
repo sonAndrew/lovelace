@@ -2,8 +2,10 @@
   "name": "lovelace",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sonAndrew.github.io/weatherForecaster",
   "dependencies": {
     "dark-sky-api": "^0.6.21",
+    "gh-pages": "^1.0.0",
     "google-geocoder": "^0.2.1",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
@@ -13,6 +15,8 @@
     "react-scripts": "1.0.10"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
